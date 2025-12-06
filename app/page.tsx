@@ -50,7 +50,7 @@ export default function Home() {
       }
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-      console.error("Error fetching secret:", error);
+      console.error("Error fetching secret:", errorMessage);
       console.error("Endpoint:", `${API_BASE_URL}${endpoint}`);
       console.error("Body:", body);
     }
@@ -238,11 +238,8 @@ export default function Home() {
                           borderRadius: '8px'
                         }
                       },
-                      wallets: {
-                        applePay: 'auto',
-                        googlePay: 'auto'
-                      }
-                    } as any}
+
+                    }}
                   >
                     <PaymentForm mode={mode} />
                   </Elements>
