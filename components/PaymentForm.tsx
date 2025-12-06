@@ -47,6 +47,9 @@ export default function PaymentForm({ mode }: { mode: string }) {
     return (
         <form onSubmit={handleSubmit}>
             <PaymentElement
+                options={{
+                    layout: "tabs"
+                }}
                 onLoadError={(event) => {
                     console.error("PaymentElement load error:", event);
                     const errorMsg = event.error?.message || 'Payment element failed to load. This usually means the Stripe publishable key does not match the account that created the payment intent.';
